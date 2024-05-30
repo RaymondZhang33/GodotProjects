@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhbyj2d023i36"]
+
+[ext_resource type="Texture2D" uid="uid://bhe1nawuulbth" path="res://Sprites/pixil-frame-0.png" id="1_40bgp"]
+[ext_resource type="Script" path="res://label.gd" id="1_e7tef"]
+[ext_resource type="Script" path="res://Sprite2D.gd" id="2_0ehqj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 932.0
+offset_top = 45.0
+offset_right = 1122.0
+offset_bottom = 134.0
+text = "YOU CAN\"T SEE ME"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 59.0
+offset_right = 150.0
+offset_bottom = 86.0
+text = "Raymond Zhang"
+script = ExtResource("1_e7tef")
+
+[node name="Sprite2D" type="Sprite2D" parent="Label"]
+position = Vector2(513, 250)
+scale = Vector2(3.34, 3.9)
+texture = ExtResource("1_40bgp")
+script = ExtResource("2_0ehqj")
+
+[connection signal="pressed" from="Button" to="Label" method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="Label/Sprite2D" method="_on_button_pressed"]
